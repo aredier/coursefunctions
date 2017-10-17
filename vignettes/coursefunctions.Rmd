@@ -1,0 +1,66 @@
+---
+title: "Course Functions"
+author: "Antoine Redier"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Description 
+
+This package provides with enhenced versions of the five major functions studied in the R introduction course of the Data Science for business graduate degree of Ecole Polytechnique
+
+#### csv_reader
+
+function that reads all the csv files in a directory and outputs them in a list of data.frame: 
+
+```{r}
+library(coursefunctions)
+
+csv_reader("../data-raw")
+```
+#### xlsx_reader
+
+reads alls the sheets of an ecxel document and retruns them in a list of data.frame
+
+```{r}
+library(coursefunctions)
+
+xlsx_reader("../data-raw/test.xlsx")
+```
+
+#### draw_name
+
+draws the number of babies born with a specific name and sex in a France between 1900 and 2015 
+
+```{r}
+library(coursefunctions)
+
+draw_name("Antoine", "M")
+```
+
+#### draw_multiple_name 
+
+same thing with multiple names 
+
+```{r}
+library(coursefunctions)
+
+draw_multiple_name(c("Antoine", "Marie"))
+```
+
+####Save as CSV 
+
+saves a csv after verifying the parameters 
+
+```{r}
+library(coursefunctions)
+
+df <- read.csv2("../data-raw/titanic_test.csv")
+
+save_as_csv(df, "../data-raw/titanic_test2.csv")
+```
+
